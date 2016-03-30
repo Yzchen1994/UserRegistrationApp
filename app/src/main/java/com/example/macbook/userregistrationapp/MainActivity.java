@@ -63,10 +63,64 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void registerUser() {
         String name = editTextName.getText().toString().trim().toLowerCase();
         String username = editTextUsername.getText().toString().trim().toLowerCase();
-        String password = editTextPassword.getText().toString().trim().toLowerCase();
+        String password = editTextPassword.getText().toString().trim();
         String email = editTextEmail.getText().toString().trim().toLowerCase();
 
-        register(name, username, password, email);
+        boolean hasErr=false;
+        //Validates the email
+        if(!isValidEmailAddress(email)) {
+            hasErr=true;
+            editTextEmail.setError("Invalid email");
+            Toast.makeText(getApplicationContext(), "Invalid email address.", Toast.LENGTH_LONG).show();
+        }
+
+        //Validates the name
+        if(name.length()==0){
+            hasErr=true;
+            editTextName.setError("Please enter your name.");
+            Toast.makeText(getApplicationContext(), "Please enter your name.", Toast.LENGTH_LONG).show();
+        }
+
+        //Validates the password
+        if(!isValidPassword(password)){
+            hasErr=true;
+            editTextPassword.setError("Password must be 6-18 characters, contains only 0-9 a-z A-Z _!@#$%^&*-");
+            Toast.makeText(getApplicationContext(), "Password must be 6-18 characters, contains only 0-9 a-z A-Z _!@#$%^&*-", Toast.LENGTH_LONG).show();
+        }
+
+        //Validates the username
+        if(!isValidUsername(username)){
+            hasErr=true;
+            editTextUsername.setError("Username must begin with a letter, has 3-16 characters, contains only 0-9, a-z, and '-' character.");
+            Toast.makeText(getApplicationContext(), "Username must begin with a letter, has 3-16 characters, contains only 0-9, a-z, and '-' character.", Toast.LENGTH_LONG).show();
+        }
+
+        if(!hasErr){
+            register(name, username, password, email);
+        }
+
+
+    }
+
+    public boolean isValidEmailAddress(String email) {
+        String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
+        java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
+        java.util.regex.Matcher m = p.matcher(email);
+        return m.matches();
+    }
+
+    public boolean isValidUsername(String username) {
+        String ePattern = "^[a-z0-9_-]{3,16}$";
+        java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
+        java.util.regex.Matcher m = p.matcher(username);
+        return m.matches();
+    }
+
+    public boolean isValidPassword(String password) {
+        String ePattern = "^[A-Za-z0-9_!@#$%^&*-]{6,18}$";
+        java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
+        java.util.regex.Matcher m = p.matcher(password);
+        return m.matches();
     }
 
     private void register(String name, String username, String password, String email) {
