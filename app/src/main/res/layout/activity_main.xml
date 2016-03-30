@@ -1,0 +1,74 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:background="#ffffff">
+
+    <LinearLayout
+
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="500px"
+                android:src="@drawable/android"/>
+
+            <TextView
+                android:paddingLeft="10px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/string_enter_name" />
+
+            <EditText
+                android:paddingLeft="10px"
+                android:layout_width="fill_parent"
+                android:layout_height="150px"
+                android:id="@+id/editTextName" />
+
+            <TextView
+                android:paddingLeft="10px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/string_choose_username" />
+
+            <EditText
+                android:paddingLeft="10px"
+                android:layout_width="fill_parent"
+                android:layout_height="150px"
+                android:id="@+id/editTextUserName" />
+
+            <TextView
+                android:paddingLeft="10px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/string_choose_password" />
+
+            <EditText
+                android:paddingLeft="10px"
+                android:layout_width="fill_parent"
+                android:layout_height="150px"
+                android:inputType="textPassword"
+                android:id="@+id/editTextPassword" />
+
+            <TextView
+                android:paddingLeft="10px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/string_enter_email" />
+
+            <EditText
+                android:paddingLeft="10px"
+                android:layout_width="fill_parent"
+                android:layout_height="150px"
+                android:inputType="textEmailAddress"
+                android:id="@+id/editTextEmail" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/button_register"
+                android:id="@+id/buttonRegister" />
+    </LinearLayout>
+
+</ScrollView>
+
