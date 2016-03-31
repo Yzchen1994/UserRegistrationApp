@@ -17,4 +17,12 @@
         android:id="@+id/textViewUserName"
         android:layout_gravity="center_horizontal"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Welcome!"
+        android:id="@+id/textViewLoginCount"
+        android:layout_gravity="center_horizontal"/>
+
 </LinearLayout>

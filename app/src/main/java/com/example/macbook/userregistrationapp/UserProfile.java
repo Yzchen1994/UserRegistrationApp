@@ -17,12 +17,13 @@ public class UserProfile extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         TextView textView = (TextView) findViewById(R.id.textViewUserName);
+        //TextView textViewLoginCount= (TextView) findViewById(R.id.textViewLoginCount);
 
         Intent intent = getIntent();
 
         String username = intent.getStringExtra(ActivityLogin.USER_NAME);
 
-        textView.setText("Welcome User "+username);
+        textView.setText("User: "+username+" logged in.");
     }
 
 }
