@@ -81,28 +81,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(!isValidEmailAddress(email)) {
             hasErr=true;
             editTextEmail.setError("Invalid email");
-            Toast.makeText(getApplicationContext(), "Invalid email address.", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Invalid email address.", Toast.LENGTH_SHORT).show();
         }
 
         //Validates the name
         if(name.length()==0){
             hasErr=true;
             editTextName.setError("Please enter your name.");
-            Toast.makeText(getApplicationContext(), "Please enter your name.", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Please enter your name.", Toast.LENGTH_SHORT).show();
         }
 
         //Validates the password
         if(!isValidPassword(password)){
             hasErr=true;
             editTextPassword.setError("Password must be 6-18 characters, contains only 0-9 a-z A-Z _!@#$%^&*-");
-            Toast.makeText(getApplicationContext(), "Password must be 6-18 characters, contains only 0-9 a-z A-Z _!@#$%^&*-", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Password must be 6-18 characters, contains only 0-9 a-z A-Z _!@#$%^&*-", Toast.LENGTH_SHORT).show();
         }
 
         //Validates the username
         if(!isValidUsername(username)){
             hasErr=true;
             editTextUsername.setError("Username must begin with a letter, has 3-16 characters, contains only 0-9, a-z, and '-' character.");
-            Toast.makeText(getApplicationContext(), "Username must begin with a letter, has 3-16 characters, contains only 0-9, a-z, and '-' character.", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Username must begin with a letter, has 3-16 characters, contains only 0-9, a-z, and '-' character.", Toast.LENGTH_SHORT).show();
         }
 
         if(!hasErr){

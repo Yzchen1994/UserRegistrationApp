@@ -47,7 +47,36 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
     private void login(){
         String username = editTextUserName.getText().toString().trim().toLowerCase();
         String password = editTextPassword.getText().toString().trim();
-        userLogin(username,password);
+        boolean hasErr=false;
+        if(!isValidUsername(username)){
+            hasErr=true;
+            editTextUserName.setError("Invalid username format.");
+            Toast.makeText(getApplicationContext(), "Invalid username format.", Toast.LENGTH_SHORT).show();
+        }
+
+        if(!isValidPassword(password)){
+            hasErr=true;
+            editTextPassword.setError("Invalid password format.");
+            Toast.makeText(getApplicationContext(), "Invalid password format.", Toast.LENGTH_SHORT).show();
+        }
+
+        if(!hasErr) {
+            userLogin(username, password);
+        }
+    }
+
+    public boolean isValidUsername(String username) {
+        String ePattern = "^[a-z0-9_-]{3,16}$";
+        java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
+        java.util.regex.Matcher m = p.matcher(username);
+        return m.matches();
+    }
+
+    public boolean isValidPassword(String password) {
+        String ePattern = "^[A-Za-z0-9_!@#$%^&*-]{6,18}$";
+        java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
+        java.util.regex.Matcher m = p.matcher(password);
+        return m.matches();
     }
 
     private void userLogin(final String username, final String password){
