@@ -1,6 +1,7 @@
 package com.example.macbook.userregistrationapp;
 
         import android.app.ProgressDialog;
+        import android.content.Intent;
         import android.os.AsyncTask;
         import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText editTextEmail;
 
     private Button buttonRegister;
+    private Button buttonLogin;
 
     private static final String REGISTER_URL = "http://myphpprojandroid1221.esy.es/UserRegistration/register.php";
 
@@ -50,13 +52,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
 
         buttonRegister = (Button) findViewById(R.id.buttonRegister);
+        buttonLogin = (Button) findViewById(R.id.buttonLogin);
+
         buttonRegister.setOnClickListener(this);
+        buttonLogin.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         if(v == buttonRegister){
             registerUser();
+        }
+
+
+        if(v==buttonLogin){
+            startActivity(new Intent(this,ActivityLogin.class));
         }
     }
 

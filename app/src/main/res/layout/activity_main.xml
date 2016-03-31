@@ -68,6 +68,18 @@
                 android:layout_height="wrap_content"
                 android:text="@string/button_register"
                 android:id="@+id/buttonRegister" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="@string/string_already_registered" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/button_login"
+            android:id="@+id/buttonLogin" />
     </LinearLayout>
 
 </ScrollView>

@@ -7,4 +7,6 @@
     <string name="string_choose_password">Choose your password</string>
     <string name="string_enter_email">Enter your email</string>
     <string name="button_register">Register</string>
+    <string name="string_already_registered">Already registered?</string>
+    <string name="button_login">Login</string>
 </resources>
