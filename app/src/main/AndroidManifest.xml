@@ -20,11 +20,13 @@
         </activity>
         <activity
             android:name=".ActivityLogin"
-            android:label="ActivityLogin" >
+            android:label="ActivityLogin"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
             android:name=".UserProfile"
-            android:label="UserProfile" >
+            android:label="UserProfile"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
 
